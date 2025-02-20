@@ -1,0 +1,1 @@
+Gestion des appels aux APIs Microsoft (Computer Vision, IA, etc.)
