@@ -6,6 +6,7 @@ CREATE DATABASE project_maeva;
 -- Création de la table des utilisateurs
 CREATE SEQUENCE user_id_seq;
 
+-- Création de la table user
 CREATE TABLE pm_user (
     id integer NOT NULL DEFAULT nextval('user_id_seq'),
     login character varying(50) NOT NULL,
