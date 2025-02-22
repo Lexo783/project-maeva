@@ -4,6 +4,7 @@ services:
     image: postgres:latest
     container_name: project-maeva
     environment:
+      - POSTGRES_DB=project_maeva
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
     ports:

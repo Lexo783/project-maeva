@@ -1,8 +1,3 @@
--- Création de la base de données (si nécessaire)
-CREATE DATABASE project_maeva;
-
-------------------------------
-
 -- Création de la table des utilisateurs
 CREATE SEQUENCE user_id_seq;
 
@@ -16,13 +11,15 @@ CREATE TABLE pm_user (
     PRIMARY KEY (id)
 );
 
+ALTER TABLE IF EXISTS public.pm_user OWNER to postgres;
+
+
 -- Insertion des utilisateurs de dev
 INSERT INTO public.pm_user(login, password, last_name, first_name)
 VALUES ('admin', '$2a$12$RkcdJn2kLrAS9fmvDv/CWehqID8nB3XBWXOtazhQ2PY1ZFwDB3L76', 'Dyma', 'Admin');
 
 INSERT INTO public.pm_user(login, password, last_name, first_name)
 VALUES ('user', '$2a$12$VRnUGZfeEsWHG9jb7NyvQuhpISK65N2LtWyqXAi5t1CBWIQ34uRNa', 'Doe', 'John');
-
 ----------------------------------------
 
 -- Création de la table des rôles
@@ -38,6 +35,8 @@ VALUES ('ROLE_ADMIN');
 INSERT INTO public.pm_role(name)
 VALUES ('ROLE_USER');
 
+ALTER TABLE IF EXISTS public.pm_role OWNER to postgres;
+
 -------------------------------------------
 
 -- Création de la table de liaison user => role
@@ -52,6 +51,8 @@ CREATE TABLE pm_user_role
     CONSTRAINT fk_user_id FOREIGN KEY (user_id)
         REFERENCES public.pm_user (id)
 );
+
+ALTER TABLE IF EXISTS public.pm_user_role OWNER to postgres;
 
 -- Insertion des différentes liaisons des roles par defauts
 INSERT INTO public.pm_user_role(user_id, role_name)
