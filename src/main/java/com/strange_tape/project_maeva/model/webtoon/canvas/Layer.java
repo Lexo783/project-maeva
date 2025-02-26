@@ -1,6 +1,6 @@
-package com.strange_tape.project_maeva.form.webtoon.canvas;
+package com.strange_tape.project_maeva.model.webtoon.canvas;
 
-import com.strange_tape.project_maeva.form.webtoon.element.CanvasElement;
+import com.strange_tape.project_maeva.model.webtoon.element.CanvasElement;
 
 import java.util.List;
 

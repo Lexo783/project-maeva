@@ -28,7 +28,7 @@ CREATE TABLE pm_role (
     PRIMARY KEY (name)
 );
 
--- Insertion des roles par défauts
+-- Insertion des roleEntities par défauts
 INSERT INTO public.pm_role(name)
 VALUES ('ROLE_ADMIN');
 
@@ -54,7 +54,7 @@ CREATE TABLE pm_user_role
 
 ALTER TABLE IF EXISTS public.pm_user_role OWNER to postgres;
 
--- Insertion des différentes liaisons des roles par defauts
+-- Insertion des différentes liaisons des roleEntities par defauts
 INSERT INTO public.pm_user_role(user_id, role_name)
 VALUES (1, 'ROLE_ADMIN');
 
